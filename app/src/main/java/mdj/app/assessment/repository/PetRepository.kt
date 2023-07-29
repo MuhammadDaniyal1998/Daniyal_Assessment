@@ -28,7 +28,7 @@ class PetRepository @Inject constructor(private val apis: Apis) {
         val response = apis.getPets(key, type, image_type, pretty)
 
         // print response
-        Log.d(TAG_RESPONSE, "getPets: ${response.body().toString()}")
+        Log.i(TAG_RESPONSE, "getPets: ${response.body().toString()}")
 
         // response handling
         handleResponse(response, tag)

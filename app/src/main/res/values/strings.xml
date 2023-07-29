@@ -7,9 +7,14 @@
     <string name="error_something_went_wrong">Something went wrong</string>
     <string name="error_internet_not_available">Internet connection not available</string>
     <string name="error_no_pet_found">No Pet Found!</string>
+    <string name="error_please_enter_something">Please enter something</string>
 
     <!-- texts -->
     <string name="text_problem_solving">Problem Solving</string>
     <string name="text_api_work">Api Work</string>
+    <string name="text_submit">Submit</string>
+
+    <!-- hints -->
+    <string name="hint_enter_something">Enter Something</string>
 
 </resources>

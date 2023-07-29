@@ -16,7 +16,7 @@ class AuthInterceptor @Inject constructor() : Interceptor {
                 "Authorization",
                 "Bearer ${LoggedInUserDB(application).getInstance()?.getUserFromLocalDb()?.token}"
             )
-            Log.d(TAG, "token: ${LoggedInUserDB(application).getInstance()?.getUserFromLocalDb()?.token}")
+            Log.i(TAG, "token: ${LoggedInUserDB(application).getInstance()?.getUserFromLocalDb()?.token}")
         }*/ // this app don't need bearer token (Authorization)
 
         return chain.proceed(request.build())

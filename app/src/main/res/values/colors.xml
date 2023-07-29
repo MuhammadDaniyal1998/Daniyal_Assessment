@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--app colors-->
     <color name="app_color">#BDC3C7</color>
     <color name="black_color">#FF000000</color>
     <color name="white_color">#FFFFFFFF</color>
     <color name="light_gray_color">#BBBBBB</color>
     <color name="blue_color">#3368FF</color>
+    <color name="transparent">#00000000</color>
+
+    <!--text colors-->
+    <color name="font_black">#2E2E2E</color>
+    <color name="font_gray">#677294</color>
+
 </resources>
