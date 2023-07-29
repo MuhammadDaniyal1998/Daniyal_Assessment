@@ -1,0 +1,98 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-android'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+
+    namespace 'mdj.app.assessment'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "mdj.app.assessment"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0.1.1"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+
+    def hilt_version = "2.43.2"
+    def hilt_life_cycle_version = "2.5.0-beta01"
+    def retrofit_version = "2.9.0"
+    def coroutines_version = "1.6.0"
+    def navigation_version = "2.5.2"
+    def glide_version = "4.12.0"
+
+    // app dependency
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // testing dependency
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //  hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    // hilt life cycle
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$hilt_life_cycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$hilt_life_cycle_version"
+
+    //  retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+
+    //  glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+
+    // coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    // navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+
+    // spin kit (loader)
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+}
+kapt { correctErrorTypes true }

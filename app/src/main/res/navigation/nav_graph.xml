@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/launchFragment">
+
+    <fragment
+        android:id="@+id/launchFragment"
+        android:name="mdj.app.assessment.ui.fragments.LaunchFragment"
+        android:label="fragment_launch"
+        tools:layout="@layout/fragment_launch">
+        <action
+            android:id="@+id/action_launchFragment_to_problemSolvingFragment"
+            app:destination="@id/problemSolvingFragment" />
+        <action
+            android:id="@+id/action_launchFragment_to_petFragment"
+            app:destination="@id/petFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/problemSolvingFragment"
+        android:name="mdj.app.assessment.ui.fragments.ProblemSolvingFragment"
+        android:label="fragment_problem_solving"
+        tools:layout="@layout/fragment_problem_solving"/>
+
+    <fragment
+        android:id="@+id/petFragment"
+        android:name="mdj.app.assessment.ui.fragments.PetFragment"
+        android:label="fragment_pet"
+        tools:layout="@layout/fragment_pet"/>
+
+
+</navigation>
