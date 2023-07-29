@@ -9,9 +9,11 @@ import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import android.view.ViewGroup
 import android.view.Window
 import android.widget.ImageView
 import android.widget.TextView
@@ -22,6 +24,7 @@ import com.bumptech.glide.request.target.CustomTarget
 import com.github.ybq.android.spinkit.SpinKitView
 import mdj.app.assessment.AppClass.Companion.application
 import mdj.app.assessment.R
+import mdj.app.assessment.databinding.DialogFullMediaBinding
 
 class Helper {
 
@@ -118,6 +121,37 @@ class Helper {
                         loader.visibility = GONE
                     }
                 })
+        }
+
+        fun showFullMediaDialog(
+            context: Context,
+            url: String
+        ) {
+
+            val dialog = Dialog(context)
+            val binding: DialogFullMediaBinding =
+                DialogFullMediaBinding.inflate(LayoutInflater.from(context))
+            dialog?.setContentView(binding.root)
+            dialog?.window?.setLayout(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+            )
+            dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            // load image
+            loadImageFromUrl(
+                context,
+                url,
+                binding.ivFull,
+                binding.loaderLayout.spinKit
+            )
+
+            // click listener
+            binding.ivBack.setOnClickListener {
+                dialog.dismiss() // dialog dismiss
+            }
+
+            dialog.show()
         }
 
     }

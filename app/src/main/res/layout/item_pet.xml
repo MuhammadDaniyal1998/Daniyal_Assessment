@@ -1,20 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/white_color"
+    android:padding="@dimen/_16dp"
+    android:layout_marginVertical="@dimen/_5dp">
+
+    <TextView
+        android:id="@+id/tv_tags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text=""
+        android:textColor="@color/blue_color"
+        android:textSize="@dimen/_14sp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_250dp">
+        android:layout_height="@dimen/_280dp"
+        android:layout_below="@+id/tv_tags"
+        android:layout_marginTop="@dimen/_16dp">
 
         <ImageView
             android:id="@+id/iv_large"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:scaleType="fitXY" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/transparent_bottom_black" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginBottom="@dimen/_16dp"
+            android:textSize="@dimen/_15sp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/white_color"/>
+
+        <TextView
+            android:id="@+id/tv_likes_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/_16dp"
+            android:layout_marginBottom="@dimen/_16dp"
+            android:textSize="@dimen/_13sp"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/white_color"/>
 
         <include
             android:id="@+id/loader_layout"
-            layout="@layout/loader_layout"/>
+            layout="@layout/loader_layout" />
 
     </RelativeLayout>
 

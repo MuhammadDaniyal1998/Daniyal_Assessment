@@ -24,6 +24,7 @@ import mdj.app.assessment.utils.Constants.VALUE_IMAGE_TYPE
 import mdj.app.assessment.utils.Constants.VALUE_PRETTY
 import mdj.app.assessment.utils.Helper.Companion.emptyView
 import mdj.app.assessment.utils.Helper.Companion.internetCheck
+import mdj.app.assessment.utils.Helper.Companion.showFullMediaDialog
 import mdj.app.assessment.utils.Helper.Companion.showToast
 import mdj.app.assessment.viewmodels.PetViewModel
 
@@ -87,7 +88,11 @@ class PetFragment : Fragment(), PetAdapter.ItemClickListener {
     }
 
     override fun onItemClick(position: Int, model: PetModel) {
-        TODO("Not yet implemented")
+        context?.let {
+            showFullMediaDialog(
+                it, model.largeImageURL
+            )
+        } // show full image
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

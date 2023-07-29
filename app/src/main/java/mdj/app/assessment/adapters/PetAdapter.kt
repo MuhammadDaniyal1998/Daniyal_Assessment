@@ -30,7 +30,9 @@ class PetAdapter(
             with(petList[position]){
 
                 // set text in text views
-//                binding.tvTitle.text = this.title
+                binding.tvTags.text = makeHashTag(tags)
+                binding.tvLikesCount.text = "$likes ${if (likes > 1) "Likes" else "Like"}"
+                binding.tvUserName.text = user
 
                 // load image in image view from url
                 context?.let {
@@ -48,6 +50,18 @@ class PetAdapter(
                 }
             }
         }
+    }
+
+    private fun makeHashTag(tags: String): String? {
+
+        var hashTags = ""
+        val tagsSplit = tags.split(", ").toTypedArray()
+
+        for (tag in tagsSplit) {
+            hashTags = "$hashTags #${tag}"
+        }
+
+        return hashTags
     }
 
     override fun getItemCount(): Int {
